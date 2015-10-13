@@ -1,0 +1,55 @@
+// -*- Groovy -*-
+// build.gradle
+//
+// Gradle build script for EC-HelloWorld plugin.
+//
+// Copyright (c) 2015 Electric Cloud, Inc.
+// All rights reserved
+
+buildscript {
+    repositories {
+        maven {
+            url 'http://dl.bintray.com/ecpluginsdev/maven'
+        }
+
+        jcenter()
+    }
+    dependencies {
+        classpath group: 'com.electriccloud.plugins', name: 'flow-gradle-plugin', version: '1.+'
+    }
+}
+
+group = "com.electriccloud"
+description = "Plugins : EC-HelloWorld"
+version = "1.0.0"
+
+apply plugin: 'flow-gradle-plugin'
+
+dependencies {
+    testCompile 'junit:junit:[4,)'
+	testCompile "org.codehaus.groovy:groovy-all:2.3.8"
+}
+
+compileJava {
+    options.warnings = false
+    options.compilerArgs = ["-nowarn"]
+
+}
+
+test {
+
+ testLogging {
+     // Show that tests are run in the command-line output
+     events 'started', 'passed'
+     exceptionFormat = 'full'
+ }
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.3'
+}
+
+gwt {
+    gwtVersion='2.5.0'
+	modules 'ecplugins.helloworld.ConfigurationManagement'
+}

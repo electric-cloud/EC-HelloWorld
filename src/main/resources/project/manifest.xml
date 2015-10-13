@@ -1,0 +1,52 @@
+<?xml version='1.0' standalone='yes'?>
+<!--
+
+     Copyright 2015 Electric Cloud, Inc.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+
+-->
+<fileset>
+    <file>
+        <path>ui_forms/createConfigForm.xml</path>
+        <xpath>//procedure[procedureName=&quot;CreateConfiguration&quot;]/propertySheet/property[propertyName=&quot;ec_parameterForm&quot;]/value</xpath>
+    </file>
+    <file>
+        <path>ui_forms/createConfigForm.xml</path>
+        <xpath>//property[propertyName=&quot;ui_forms&quot;]/propertySheet/property[propertyName=&quot;CreateConfigForm&quot;]/value</xpath>
+    </file>
+    <file>
+        <path>ui_forms/editConfigForm.xml</path>
+        <xpath>//property[propertyName=&quot;ui_forms&quot;]/propertySheet/property[propertyName=&quot;EditConfigForm&quot;]/value</xpath>
+    </file>
+    <file>
+        <path>ui_forms/sayHello.xml</path>
+        <xpath>//procedure[procedureName=&quot;SayHello&quot;]/propertySheet/property[propertyName=&quot;ec_parameterForm&quot;]/value</xpath>
+    </file>
+    <file>
+        <path>config/createcfg.pl</path>
+        <xpath>//procedure[procedureName=&quot;CreateConfiguration&quot;]/step[stepName=&quot;CreateConfiguration&quot;]/command</xpath>
+    </file>
+    <file>
+        <path>config/deletecfg.pl</path>
+        <xpath>//procedure[procedureName=&quot;DeleteConfiguration&quot;]/step[stepName=&quot;DeleteConfiguration&quot;]/command</xpath>
+    </file>
+    <file>
+        <path>procedures/sayHello.pl</path>
+        <xpath>//step[stepName=&quot;sayHello&quot;]/command</xpath>
+    </file>
+    <file>
+        <path>ec_setup.pl</path>
+        <xpath>//property[propertyName=&quot;ec_setup&quot;]/value</xpath>
+    </file>
+</fileset>
