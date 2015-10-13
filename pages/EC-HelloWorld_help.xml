@@ -45,6 +45,7 @@
                 </li>
             </ul>
 
+
             <h1 id="overview">Overview</h1>
 
             <p>EC-HelloWorld plugin is the traditional hello world to help you get started with the ElectricCloud open
@@ -52,13 +53,13 @@
             </p>
 
             <p>
-                <i>For more information about EC-HelloWorld, refer to the<a href="#quickstart">Quick Start</a>.</i>
+                <i>For more information about EC-HelloWorld, refer to the <a href="https://electric-cloud.github.io#quickstart">Quick Start</a> guide.</i>
             </p>
 
             <h1 id="procedures">Procedures</h1>
 
             <h2 id="SayHello">SayHello</h2>
-            <p>Prints hello world</p>
+            <p>Says hello world!</p>
 
 
         </div>
