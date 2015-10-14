@@ -25,6 +25,7 @@ use utf8;
 use open IO => ':encoding(utf8)';
 use ElectricCommander;
 use ElectricCommander::PropDB;
+use Switch;
 
 $| = 1;
 
@@ -35,19 +36,31 @@ my $configName = q{$[config]};
 my $ec = new ElectricCommander();
 $ec->abortOnError(0);
 
-# Get the configuration values
+my $formalLevel;
+# Get the configuration values if the configuration name was specified
 my $cfg  = new ElectricCommander::PropDB( $ec, "/myProject/helloworld_cfgs");
-my %configValues = $cfg->getRow($configName);
+if ($configName) {
+    my %configValues = $cfg->getRow($configName);
 
-# Check if configuration exists
-unless ( keys(%configValues) ) {
-    print "Configuration '[$configName]' does not exist\n";
-    exit 1;
+    # Check if configuration exists
+    unless ( keys(%configValues) ) {
+        my $err = "Configuration '[$configName]' does not exist. Leave the 'Configuration' empty if you haven't created a configuration yet.\n";
+        $ec->setProperty("summary", $err);
+        print $err;
+        exit 1;
+    }
+
+    #Get the formality level that was saved in the configuration.
+    $formalLevel = $configValues{'formalLevel'};
 }
 
-my $formalLevel = $configValues{'formalLevel'};
-
-my $msg = 'say hello world!';
+my $msg = 'Hello World!';
+# Change the message based on the formal level selected
+switch ($formalLevel){
+   case("Informal") { $msg = "Hello World!"; }
+   case("Surfer") { $msg = "Yo, World!"; }
+   case("Almost Formal") { $msg = "Greetings World!"; }
+}
 
 # Set the message in the job summary as well as print it in the step logs.
 $ec->setProperty("summary", $msg . "\n");

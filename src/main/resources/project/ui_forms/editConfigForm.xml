@@ -37,8 +37,8 @@
             <value>Informal</value>
         </option>
         <option>
-            <name>Formal</name>
-            <value>Formal</value>
+            <name>Almost Formal</name>
+            <value>Almost Formal</value>
         </option>
     </formElement>
 </editor>

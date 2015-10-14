@@ -35,7 +35,7 @@
         <type>select</type>
         <label>Level of formality:</label>
         <property>formalLevel</property>
-        <value>2</value>
+        <value>Informal</value>
         <documentation>Level of formality to use</documentation>
         <required>1</required>
         <option>
@@ -47,8 +47,8 @@
             <value>Informal</value>
         </option>
         <option>
-            <name>Formal</name>
-            <value>Formal</value>
+            <name>Almost Formal</name>
+            <value>Almost Formal</value>
         </option>
     </formElement>
 </editor>
